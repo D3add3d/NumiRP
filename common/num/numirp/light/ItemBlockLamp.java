@@ -1,16 +1,15 @@
-package num.numirp.block;
+package num.numirp.light;
 
+import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import num.numirp.NumiRP;
 import num.numirp.lib.Strings;
 
-public class ItemBlockDecor extends ItemBlock {
-    public ItemBlockDecor(int par1) {
-        super(par1);
+public class ItemBlockLamp extends ItemBlock {
+    public ItemBlockLamp(Block block) {
+        super(block);
         setHasSubtypes(true);
         setMaxDamage(0);
-        setCreativeTab(NumiRP.tabNRP);
     }
 
     @Override
@@ -20,7 +19,7 @@ public class ItemBlockDecor extends ItemBlock {
 
     public String getUnlocalizedName(ItemStack is) {
         int meta = is.getItemDamage();
-        return getUnlocalizedName() + "." + Strings.DECOR[meta];
+        return getUnlocalizedName() + "." + Strings.COLORS[meta];
     }
 
 }
